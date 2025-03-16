@@ -48,6 +48,24 @@ char Win() {
 }
 
 int main(){
-
+    n = 0;
+    Draw();
+    while (1) {
+        n++;
+        Input();
+        Draw();
+        if (Win() == 'X') {
+            printf("X wins!!!\n");
+            break;
+        } else if (Win() == 'O') {
+            printf("O wins!!!\n");
+            break;
+        } else if (n == 9) {
+            printf("Draw :(\n");
+            break;
+        }
+        TogglePlayer();
+    }
+    system("pause");
     return 0;
 }
