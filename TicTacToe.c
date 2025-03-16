@@ -36,6 +36,17 @@ void TogglePlayer() {
     player = (player == 'X') ? 'O' : 'X';
 }
 
+char Win() {
+    for (int i = 0; i < 3; i++) {
+        if (matrix[i][0] == player && matrix[i][1] == player && matrix[i][2] == player) return player;
+        if (matrix[0][i] == player && matrix[1][i] == player && matrix[2][i] == player) return player;
+    }
+    if (matrix[0][0] == player && matrix[1][1] == player && matrix[2][2] == player) return player;
+    if (matrix[0][2] == player && matrix[1][1] == player && matrix[2][0] == player) return player;
+
+    return '/';
+}
+
 int main(){
 
     return 0;
