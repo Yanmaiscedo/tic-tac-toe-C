@@ -16,6 +16,22 @@ void Draw() {
     }
 }
 
+void Input() {
+    int a;
+    printf("It's %c turn. Press the number of the field: ", player);
+    scanf("%d", &a);
+
+    int row = (a - 1) / 3;
+    int col = (a - 1) % 3;
+
+    if (matrix[row][col] == '1' + (a - 1)) {
+        matrix[row][col] = player;
+    } else {
+        printf("Field is already in use, try again!\n");
+        Input();
+    }
+}
+
 int main(){
 
     return 0;
