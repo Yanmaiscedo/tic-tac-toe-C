@@ -32,6 +32,10 @@ void Input() {
     }
 }
 
+void TogglePlayer() {
+    player = (player == 'X') ? 'O' : 'X';
+}
+
 int main(){
 
     return 0;
